@@ -108,7 +108,7 @@ if String.method_defined?(:encode)
       INVALID_XML_CHAR = Regexp.new('[^'+
         Builder::XChar::VALID.map { |item|
           case item
-          when Fixnum
+          when Integer
             [item].pack('U').force_encoding('utf-8')
           when Range
             [item.first, '-'.ord, item.last].pack('UUU').force_encoding('utf-8')
